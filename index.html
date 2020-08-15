@@ -90,10 +90,12 @@
 
         // Whenever the elevator is idle (has no more queued destinations) ...
         elevator.on("idle", function() {
-            // let's go to all the floors (or did we forget one?)
-            elevator.goToFloor(0);
-            elevator.goToFloor(1);
-            elevator.goToFloor(2);
+            elevator.destinationQueue = [];
+            elevator.on("floor_button_pressed", function(floorNum) {
+            elevator.destinationQueue.push(floorNum);
+            elevator.checkDestinationQueue();
+            elevator.goToFloor(floorNum, true);
+            })
         });
     },
     update: function(dt, elevators, floors) {
