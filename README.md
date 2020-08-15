@@ -11,7 +11,7 @@ Please report any test failures as an issue.
 
 --
 
-#Challenge to the MAX!
+# Challenge to the MAX!
 
 - 1. Create a new Github repo
 
