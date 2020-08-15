@@ -89,6 +89,9 @@
         var elevator = elevators[0]; // Let's use the first elevator
 
         // Whenever the elevator is idle (has no more queued destinations) ...
+
+        // Solution for Challenge #2 also worked for Challenge #3 (on first try/test)
+
         elevator.on("idle", function() {
             elevator.destinationQueue = [];
             elevator.on("floor_button_pressed", function(floorNum) {
